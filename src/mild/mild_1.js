@@ -30,7 +30,7 @@ export function getIncreasingArray(startNumber, endNumber) {
     var arr = new Array(x);
 
 
-    for(let i =0; i<arr.length; i++_{
+    for(let i =0; i<arr.length; i++){
         arr[i] = startNumber;
         startNumber++;
 
@@ -58,6 +58,11 @@ export function maxAndMin(numbers) {
             max = numbers[i];
         }
     }
+
+    var obj = {};
+    obj["min"] = min;
+    obj["max"] = max;
+    return obj;
 }
 
 /**
@@ -71,6 +76,27 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    var arr = array;
+
+    [...new Set(arr)]
+
+    var obj = {};
+    for(let i =0; i<arr.length; i++){
+        for(let j =0; j<array.length;i++){
+            var counter  = 0;
+            if(arr[i] == array[j]){
+                counter ++;
+            }
+        }
+
+        let key = arr[i];
+        obj = {
+            [key]: counter,
+        };
+
+    }
+
+    return obj;
 
 
 }

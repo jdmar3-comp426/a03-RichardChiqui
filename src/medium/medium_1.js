@@ -1,3 +1,4 @@
+import { maxAndMin } from "../mild/mild_1.js";
 import {variance} from "./data/stats_helpers.js";
 
 /**
@@ -8,6 +9,11 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
+    var sum = 0;
+    for(let i =0; i<array.length;i++){
+        sum = sum + array[i];
+    }
+    return sum;
 
 }
 
@@ -22,6 +28,15 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    if(array.length%2 == 0 ){
+        var half = array.length/2;
+        var median = (array[half] + array[half=1]) /2;
+    }
+    if(array.length%2 !=0){
+        var half = (array.length +1)/2;
+        var median = (array[half]);
+    }
+    return median;
 
 }
 
@@ -45,6 +60,37 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
+    import {maxAndMin} from "./mild_1.js"
+
+    var obj = maxAndMin(array);
+    var min = obj.min;
+    var max = obj.max;
+    var median = getMedian(array);
+    var sum = getSum(array);
+    var mean = sum / array.length;
+    var variance = math.variance(array);
+    var std = math.standard_deviation(array);
+    var finobj = {};
+
+    finobj["min"] = min;
+    finobj["median"] = median;
+    finobj["max"] = max;
+    finobj["variance"] = variance;
+    finobj["mean"] = mean;
+    finobj["length"] = array.length;
+    finobj["sum"] = sum;
+    finobj["standard_deviation"] = std;
+
+    return finobj;
+
+
+
+
+
+
+
+
+
 
 }
 
