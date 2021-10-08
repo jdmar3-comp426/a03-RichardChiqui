@@ -34,8 +34,8 @@ export function identifyVariable(variable) {
    }
 
 
-   obj["type"] = type;
-   obj["value"] = variable;
+   obj.type = type;
+   obj.value = variable;
 
    return obj;
 }
@@ -55,12 +55,21 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-   var objarr = {};
+   var obj = {};
+   var arr  = new Array(array.length);
    for(let i =0; i<array.length; i++){
       var counter = identifyVariable(array[i]);
-      obj["type"] = counter.type;
-      obj["value"] = counter.value;
+
+      arr[i] = new Object();
+      arr[i].type = counter.type;
+      arr[i].value = counter.value;
+
+
+
+
    }
+
+   return arr;
 }
 
 /**
@@ -80,7 +89,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   delete object.key;
+   delete object[key];
    return;
 
 }
