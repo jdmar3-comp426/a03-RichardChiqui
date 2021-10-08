@@ -83,14 +83,5 @@ export function getStatistics(array) {
 
     return finobj;
 
-
-
-
-
-
-
-
-
-
 }
 
