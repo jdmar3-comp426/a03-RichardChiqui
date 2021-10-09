@@ -8,21 +8,9 @@
  * returns: '3 + 4 = 7'
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
- export function getSum(array) {
 
-    var sum = 0;
-
-    for(let i =0; i<array.length;i++){
-        sum = sum + array[i];
-    }
-
-    return sum;
-
-}
 export function sumToString(a, b) {
-
     return a+b;
-
 }
 
 
