@@ -9,7 +9,7 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-    console.log(sum);
+
     var sum = 0;
 
     for(let i =0; i<array.length;i++){

@@ -5,7 +5,19 @@ import{countArray} from "../src/mild/mild_1.js";
 import{identifyVariable} from "../src/mild/mild_2.js";
 import{identifyArray} from "../src/mild/mild_2.js";
 import{removeKey} from "../src/mild/mild_2.js";
-import{getSum} from "../src/medium/medium_1.js";
+import { removeKeyNonDestructive } from "../src/mild/mild_2.js";
+import { removeKeys } from "../src/mild/mild_2.js";
+import { getSum } from "../src/mild/mild_1.js";
+;
+var arr = [1,2,3,4,5];
+
+console.log(getSum(arr));
 
 
-console.log(getSum([5,3,2,4,1]));
+
+
+
+
+
+
+
