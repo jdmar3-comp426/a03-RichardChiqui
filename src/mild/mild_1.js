@@ -20,7 +20,7 @@ export function sumToString(a, b) {
     var newb = b.toString();
     var both  = newa.concat(newb);
 
-    var final = newa + "+" + newb + "=" + n;
+    var final = newa + ' ' + "+" + " "+  newb + " " + "=" + " "  + n;
 
     return final;
 }
@@ -74,8 +74,8 @@ export function maxAndMin(numbers) {
     }
 
     var obj = {};
-    obj["min"] = min;
-    obj["max"] = max;
+    obj.min = min;
+    obj.max = max;
     return obj;
 }
 

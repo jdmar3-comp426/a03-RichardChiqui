@@ -8,9 +8,9 @@ import{identifyArray} from "../src/mild/mild_2.js";
 import{removeKey} from "../src/mild/mild_2.js";
 import { removeKeyNonDestructive } from "../src/mild/mild_2.js";
 import { removeKeys } from "../src/mild/mild_2.js";
-var arr = [3,2,4,5,5,5,2,6,7];
+var arr = [2,4,3,1,5];
 
-console.log(sumToString(4,9));
+console.log(maxAndMin(arr));
 
 
 
