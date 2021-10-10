@@ -13,7 +13,16 @@
 
 
 export function sumToString(a, b) {
-    return a+b;
+    var c = a+b
+
+    var n = c.toString();
+    var newa = a.toString();
+    var newb = b.toString();
+    var both  = newa.concat(newb);
+
+    var final = newa + "+" + newb + "=" + n;
+
+    return final;
 }
 
 
