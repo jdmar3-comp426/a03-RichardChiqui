@@ -18,12 +18,34 @@ see under the methods section
  * the years the cars were made.
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
+ *
  */
+
+var cityavg;
+var highway;
+var arr = new Array(mpg_data.length);
+var ishybrid;
+for( let i =0; i<mpg_data.length; i++){
+      cityavg = mpg_data[i].city_mpg;
+      highway = mpg_data[i].highway_mpg;
+      arr[i] = mpg_data[i].year;
+      if(mpg_data[i].hybrid == true){
+          ishybrid ++;
+      }
+}
+cityavg = cityavg / mpg_data.length;
+highway = highway / mpg_data.length;
+
 export const allCarStats = {
 
-    avgMpg: undefined,
-    allYearStats: undefined,
-    ratioHybrids: undefined,
+
+    avgMpg:{
+
+        'city':cityavg,
+        'highway':  highway
+    }  ,
+    allYearStats: getStatistics(arr),
+    ratioHybrids: (ishybrid / mpg_data.length),
 };
 
 
@@ -84,6 +106,18 @@ export const allCarStats = {
  *
  * }
  */
+var arr = [];
+
+for(let i =0; i< mpg_data.length;i++){
+    if(arr.includes(mpg_data[i].make) == false){
+            arr[i] = new Object();
+            arr.make = mpg_data[i].make;
+
+    }
+
+
+
+}
 export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined

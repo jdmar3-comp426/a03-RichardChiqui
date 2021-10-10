@@ -30,13 +30,18 @@ export function getSum(array) {
  * let array = [3,2,5,6,2,7,4,2,7,5];
  * console.log(getMedian(array)); // 4.5
  */
-export function getMedian(array) {
+ export function getMedian(array) {
+
+    array.sort(function(a, b) {
+        return a - b;
+      });
+
     if(array.length%2 == 0 ){
         var half = array.length/2;
-        var median = (array[half] + array[half=1]) /2;
+        var median = (array[half] + array[half-1]) /2;
     }
     if(array.length%2 !=0){
-        var half = (array.length +1)/2;
+        var half = (array.length - 1)/2;
         var median = (array[half]);
     }
     return median;

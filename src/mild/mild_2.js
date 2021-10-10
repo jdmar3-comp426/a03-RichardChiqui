@@ -59,14 +59,9 @@ export function identifyArray(array) {
    var arr  = new Array(array.length);
    for(let i =0; i<array.length; i++){
       var counter = identifyVariable(array[i]);
-
       arr[i] = new Object();
       arr[i].type = counter.type;
       arr[i].value = counter.value;
-
-
-
-
    }
 
    return arr;
