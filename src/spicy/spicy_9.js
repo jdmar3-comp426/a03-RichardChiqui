@@ -15,6 +15,12 @@
  *                from calling the function
  */
 export const repeat = (fn, n, ...params) => {
+    var arr = [];
+    if(n <= 0 ){
+        return arr.push(1);
+    }
+
+    repeat(fn,n-1,...params);
 
 };
 

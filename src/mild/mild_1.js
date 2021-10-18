@@ -74,8 +74,9 @@ export function maxAndMin(numbers) {
     }
 
     var obj = {};
-    obj.min = parseInt(min);
     obj.max = parseInt(max);
+    obj.min = parseInt(min);
+
     return obj;
 }
 

@@ -107,18 +107,90 @@ export const allCarStats = {
  * }
  */
 var arr = [];
+var final = [];
 
 for(let i =0; i< mpg_data.length;i++){
-    if(arr.includes(mpg_data[i].make) == false){
-            arr[i] = new Object();
-            arr.make = mpg_data[i].make;
+    if(mpg_data[i].hybrid == true){
+        if(arr.includes(mpg_data[i].make) == false){
+            arr[i] = mpg_data[i].make;
+    }
+    }
 
+}
+
+var arrobj = [];
+
+for(let i =0; i<arr.length;i++){
+    for(let j =0; j<mpg_data.length;j++){
+        if(arr[i] == mpg_data[j].make){
+            final.push(mpg_data[i].id);
+
+        }
+    }
+
+    arrobj[i] = new Object();
+    arrobj.make = arr[i];
+    arrobj.hybrids = [];
+    arrobj.hybrids.push(final);
+    final = [];
+
+}
+
+var year = [];
+for(let i =0; i< mpg_data.length;i++){
+        if(year.includes(mpg_data[i].year) == false){
+            year[i] = mpg_data[i].year;
     }
 
 
+}
+var cityhybrid;
+var highwayhybird;
+var counterhybrid;
+var citynot;
+var highwaynot;
+var counternot;
+var finobj = new Object();
+
+for(let i =0; i<year.length;i++){
+    for(let j =0; j<mpg_data.length;j++){
+        if(year[i] == mpg_data[j].year){
+            if(mpg_data[i].hybrid == true){
+                cityhybrid = cityhybrid + mpg_data[i].city_mpg;
+                highwayhybird = highwayhybird + mpg_data[i].highway_mpg;
+                counterhybrid ++;
+
+            }
+            if(mpg_data[i].hybrid == false){
+                citynot = citynot + mpg_data[i].city_mpg;
+                highwaynot = highwaynot + mpg_data[i].highway_mpg;
+                counternot ++;
+
+            }
+
+
+
+        }
+    }
+    cityhybrid = cityhybrid / counterhybrid;
+    highwayhybird = highwayhybird / counterhybrid;
+    citynot = citynot / counternot;
+    highwaynot = highwaynot / counternot;
+
+    finobj.year[i] ={
+        hybrid = {
+            city: cityhybrid,
+            highway:highwayhybird
+        },
+        notHybrid = {
+            city: citynot,
+            highway: highwaynot
+
+        }
+    }
 
 }
 export const moreStats = {
-    makerHybrids: undefined,
-    avgMpgByYearAndHybrid: undefined
+    makerHybrids: arrobj,
+    avgMpgByYearAndHybrid: finobj
 };
