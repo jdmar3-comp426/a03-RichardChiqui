@@ -16,12 +16,13 @@
  */
 export const repeat = (fn, n, ...params) => {
     var arr = [];
-    if(n <= 0 ){
-        return arr.push(1);
+    if(n = 0){
+        return arr;
     }
-
-    repeat(fn,n-1,...params);
-
+    for(let i =0; i<n; i++){
+       arr.push(fn(...params));
+    }
+    return(arr);
 };
 
 
@@ -30,6 +31,10 @@ export const repeat = (fn, n, ...params) => {
  *   10 times.
  */
 export const repeatDemo = () => {
+    function hello(){
+        return "Hello, world!"
+    }
+    return repeat(hello,10);
 
 };
 
@@ -46,8 +51,13 @@ export const repeatDemo = () => {
  *   parameter "num2". The returned function should calculate and return the
  *   product of num1 and num2.
  */
-export const multiplyBy = (num1) => {
 
+export const multiplyBy = (num1) => {
+    function test(num2){
+            return num1*num2;
+
+    }
+    return test
 };
 
 
@@ -55,7 +65,7 @@ export const multiplyBy = (num1) => {
  * Use the multiplyBy function to create and export a function named
  *   "tenTimes" that multiplies a number by 10.
  */
-export const tenTimes = undefined;
+export const tenTimes = multiplyBy(10);
 
 
 /**
@@ -63,7 +73,7 @@ export const tenTimes = undefined;
  *   function to multiply 50 by 10 and returns the result.
  */
 export const tenTimesFifty = () => {
-
+    return tenTimes * 50
 };
 
 
@@ -91,6 +101,14 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
+    for(let i =0; i<arr.length;i++){
+        if(arr[i]%2 == 0){
+            if(test(arr[i])==true){
+                return true;
+            }
+        }
+    }
+    return false;
 
 };
 
