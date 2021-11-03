@@ -24,10 +24,11 @@ see under the methods section
 var cityavg;
 var highway;
 var arr = new Array(mpg_data.length);
+
 var ishybrid;
 for( let i =0; i<mpg_data.length; i++){
-      cityavg = mpg_data[i].city_mpg;
-      highway = mpg_data[i].highway_mpg;
+      cityavg = cityavg + mpg_data[i].city_mpg;
+      highway = highway+ mpg_data[i].highway_mpg;
       arr[i] = mpg_data[i].year;
       if(mpg_data[i].hybrid == true){
           ishybrid ++;
