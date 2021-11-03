@@ -25,7 +25,7 @@ var cityavg = 0;
 var highway = 0;
 var arr = new Array(mpg_data.length);
 
-var ishybrid;
+var ishybrid = 0;
 for( let i =0; i<mpg_data.length; i++){
       cityavg = cityavg + mpg_data[i].city_mpg;
       highway = highway+ mpg_data[i].highway_mpg;
