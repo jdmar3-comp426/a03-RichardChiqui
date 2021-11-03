@@ -1,5 +1,5 @@
 import { maxAndMin } from "../mild/mild_1.js";
-import { variance,variance } from "./data/stats_helpers.js";
+import { variance} from "./data/stats_helpers.js";
 
 /**
  * Gets the sum of an array of numbers.
@@ -87,5 +87,14 @@ export function getStatistics(array) {
 
     return finobj;
 
+}
+export function variance(array, mean) {
+    return array.map(function (sample) {
+        return Math.pow(mean - sample, 2);
+    })
+        .reduce(function sum(m, v) {
+            m += v;
+            return m;
+        }, 0) / array.length;
 }
 
