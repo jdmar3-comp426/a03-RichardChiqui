@@ -232,10 +232,10 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-    var test = new Object();
+    var test1 = new Object();
 
-    test = filter(arr,test);
-    if(test.pass.length == n){
+    test1 = filter(arr,test);
+    if(test1.pass.length == n){
         return true
 
 }
