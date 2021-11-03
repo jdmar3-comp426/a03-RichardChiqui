@@ -79,11 +79,11 @@ export function getStatistics(array) {
     finobj["min"] = min;
     finobj["median"] = median;
     finobj["max"] = max;
-    finobj["variance"] = variance;
     finobj["mean"] = mean;
     finobj["length"] = array.length;
     finobj["sum"] = sum;
-    finobj["standard_deviation"] = std;
+   /* finobj["variance"] = variance;
+    finobj["standard_deviation"] = std;*/
 
     return finobj;
 
