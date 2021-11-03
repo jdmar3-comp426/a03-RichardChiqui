@@ -187,6 +187,13 @@ for(let i =0; i<year.length;i++){
 
         }
     }
+
+ cityhybrid = 0;
+ highwayhybird = 0;
+ counterhybrid = 0;
+ citynot = 0;
+ highwaynot = 0;
+ counternot = 0;
 }
 export const moreStats = {
     makerHybrids: arrobj,
