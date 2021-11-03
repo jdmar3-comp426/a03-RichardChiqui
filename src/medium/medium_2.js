@@ -154,15 +154,15 @@ var finobj = new Object();
 for(let i =0; i<year.length;i++){
     for(let j =0; j<mpg_data.length;j++){
         if(year[i] == mpg_data[j].year){
-            if(mpg_data[i].hybrid == true){
-                cityhybrid = cityhybrid + mpg_data[i].city_mpg;
-                highwayhybird = highwayhybird + mpg_data[i].highway_mpg;
+            if(mpg_data[j].hybrid == true){
+                cityhybrid = cityhybrid + mpg_data[j].city_mpg;
+                highwayhybird = highwayhybird + mpg_data[j].highway_mpg;
                 counterhybrid ++;
 
             }
-            if(mpg_data[i].hybrid == false){
-                citynot = citynot + mpg_data[i].city_mpg;
-                highwaynot = highwaynot + mpg_data[i].highway_mpg;
+            if(mpg_data[j].hybrid == false){
+                citynot = citynot + mpg_data[j].city_mpg;
+                highwaynot = highwaynot + mpg_data[j].highway_mpg;
                 counternot ++;
 
             }
