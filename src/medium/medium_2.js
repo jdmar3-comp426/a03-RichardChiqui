@@ -176,7 +176,7 @@ for(let i =0; i<year.length;i++){
     citynot = citynot / counternot;
     highwaynot = highwaynot / counternot;
 
-    finobj.year[i] = {
+    finobj[year[i]] = {
         hybrid : {
             city: cityhybrid,
             highway:highwayhybird
