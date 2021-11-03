@@ -29,7 +29,7 @@ export const repeat = (fn, n, ...params) => {
  */
 export const repeatDemo = () => {
     function hello(){
-        return "Hello, world!"
+        return console.log("Hello, world!");
     }
     return repeat(hello,10);
 
