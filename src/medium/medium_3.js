@@ -77,8 +77,7 @@ export function searchName(car_data, searchTerm) {
         }
     }
 
-    var finalarr = [...new Set(arr)];
-return finalarr;
+    return arr;
 }
 
 
