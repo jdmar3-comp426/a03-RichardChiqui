@@ -64,7 +64,7 @@ export function getSum(array) {
  }
  */
 export function getStatistics(array) {
-    import {maxAndMin} from "./mild_1.js"
+
 
     var obj = maxAndMin(array);
     var min = obj.min;
