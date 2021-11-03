@@ -72,8 +72,8 @@ export function getStatistics(array) {
     var median = getMedian(array);
     var sum = getSum(array);
     var mean = sum / array.length;
-    var variance = variance(array,mean);
-    var std = math.standard_deviation(array);
+    /*var variance = variance(array,mean);
+    var std = math.standard_deviation(array);*/
     var finobj = {};
 
     finobj["min"] = min;
