@@ -37,10 +37,7 @@ cityavg = cityavg / mpg_data.length;
 highway = highway / mpg_data.length;
 
 export const allCarStats = {
-
-
     avgMpg:{
-
         'city':cityavg,
         'highway':  highway
     }  ,
@@ -177,7 +174,10 @@ for(let i =0; i<year.length;i++){
     citynot = citynot / counternot;
     highwaynot = highwaynot / counternot;
 
-    finobj.year[i] ={
+    var holder = year[i];
+
+
+    finobj.holder = {
         hybrid : {
             city: cityhybrid,
             highway:highwayhybird
@@ -188,7 +188,6 @@ for(let i =0; i<year.length;i++){
 
         }
     }
-
 }
 export const moreStats = {
     makerHybrids: arrobj,
