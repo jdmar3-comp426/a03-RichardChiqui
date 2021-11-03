@@ -21,8 +21,8 @@ see under the methods section
  *
  */
 
-var cityavg;
-var highway;
+var cityavg = 0;
+var highway = 0;
 var arr = new Array(mpg_data.length);
 
 var ishybrid;
