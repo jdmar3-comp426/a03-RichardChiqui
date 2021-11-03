@@ -76,12 +76,17 @@ export function getStatistics(array) {
     var std = Math.pow(variance2,.5);
     var finobj = {};
 
-    finobj["min"] = min;
-    finobj["median"] = median;
-    finobj["max"] = max;
-    finobj["mean"] = mean;
     finobj["length"] = array.length;
     finobj["sum"] = sum;
+    finobj["mean"] = mean;
+    finobj["median"] = median;
+
+    finobj["min"] = min;
+
+    finobj["max"] = max;
+
+
+
     finobj["variance"] = variance2;
     finobj["standard_deviation"] = std;
 
