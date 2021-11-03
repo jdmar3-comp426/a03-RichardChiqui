@@ -18,14 +18,12 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
-    var result = mpg_data.filter(car_data);
-
     var arr = [];
 
-    for(let i=0; i<result.length;i++){
-        if(result[i].horsepower >= minHorsepower && result[i].torque >= minTorque){
+    for(let i=0; i<car_data.length;i++){
+        if(car_data[i].horsepower >= minHorsepower && car_data[i].torque >= minTorque){
             arr[i] = new Object();
-            arr.push(result[i]);
+            arr.push(car_data[i]);
 
         }
     }
