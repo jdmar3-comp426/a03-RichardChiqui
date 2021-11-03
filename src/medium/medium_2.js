@@ -110,7 +110,7 @@ var final = [];
 for(let i =0; i< mpg_data.length;i++){
     if(mpg_data[i].hybrid == true){
         if(arr.includes(mpg_data[i].make) == false){
-            arr[i] = mpg_data[i].make;
+            arr.push(mpg_data[i].make);
     }
     }
 
@@ -135,9 +135,10 @@ for(let i =0; i<arr.length;i++){
 }
 
 var year = [];
+year.push(mpg_data[0].year);
 for(let i =0; i< mpg_data.length;i++){
         if(year.includes(mpg_data[i].year) == false){
-            year[i] = mpg_data[i].year;
+            year.push(mpg_data[i].year);
     }
 
 
@@ -150,7 +151,7 @@ var highwaynot = 0;
 var counternot = 0;
 var finobj = new Object();
 
-for(let i =0; i<year.length-1;i++){
+for(let i =0; i<year.length;i++){
     for(let j =0; j<mpg_data.length;j++){
         if(year[i] == mpg_data[j].year){
             if(mpg_data[i].hybrid == true){
@@ -174,9 +175,6 @@ for(let i =0; i<year.length-1;i++){
     highwayhybird = highwayhybird / counterhybrid;
     citynot = citynot / counternot;
     highwaynot = highwaynot / counternot;
-
-    var holder = year[i];
-
 
     finobj.year[i] = {
         hybrid : {
