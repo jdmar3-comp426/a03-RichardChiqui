@@ -6,7 +6,38 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
+   var type;
+   var obj  = {};
+   if(typeof(variable) == 'string'){
+      type = 'string';
+   }
+   if(typeof(variable) == 'undefined'){
+      type = 'undefined';
+   }
+   if(typeof(variable) == 'object'){
+      type = 'object';
+   }
+   if(typeof(variable) == 'boolean'){
+      type = 'boolean';
+   }
+   if(typeof(variable) == 'number'){
+      type = 'number';
+   }
+   if(typeof(variable) == 'function'){
+      type = 'function';
+   }
+   if(typeof(variable) == 'symbol'){
+      type = 'symbol';
+   }
+   if(typeof(variable) == 'bigint'){
+      type = 'bigint';
+   }
 
+
+   obj.type = type;
+   obj.value = variable;
+
+   return obj;
 }
 
 
@@ -24,7 +55,16 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
+   var obj = {};
+   var arr  = new Array(array.length);
+   for(let i =0; i<array.length; i++){
+      var counter = identifyVariable(array[i]);
+      arr[i] = new Object();
+      arr[i].type = counter.type;
+      arr[i].value = counter.value;
+   }
 
+   return arr;
 }
 
 /**
@@ -44,6 +84,8 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
+   delete object[key];
+   return;
 
 }
 
@@ -65,6 +107,9 @@ export function removeKey(object, key) {
  */
 export function removeKeyNonDestructive(object, key) {
 
+   let newobj = {...object};
+   removeKey(newobj,key);
+   return newobj;
 }
 
 /**
@@ -89,5 +134,12 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
+   var newobj = JSON.parse(JSON.stringify(object));
+   for(let i =0; i<keyList.length;i++){
+      removeKey(newobj,keyList[i]);
+   }
+   return newobj;
+
+
 
 }

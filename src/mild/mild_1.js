@@ -8,8 +8,21 @@
  * returns: '3 + 4 = 7'
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
-export function sumToString(a, b) {
 
+
+
+
+export function sumToString(a, b) {
+    var c = a+b
+
+    var n = c.toString();
+    var newa = a.toString();
+    var newb = b.toString();
+    var both  = newa.concat(newb);
+
+    var final = newa + ' ' + "+" + " "+  newb + " " + "=" + " "  + n;
+
+    return final;
 }
 
 
@@ -24,6 +37,19 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
+    if(endNumber < startNumber){
+        return 0;
+    }
+    var x = (endNumber - startNumber) + 1;
+    var arr = new Array(x);
+
+
+    for(let i =0; i<arr.length; i++){
+        arr[i] = startNumber;
+        startNumber++;
+
+    }
+    return arr;
 
 }
 
@@ -35,7 +61,23 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
+    var min = numbers[0];
+    var max = numbers[0];
 
+    for(let i =0; i<numbers.length; i++){
+        if(min > numbers[i]){
+            min = numbers[i];
+        }
+        if(max < numbers[i]){
+            max = numbers[i];
+        }
+    }
+
+    var obj = {};
+    obj.max = parseInt(max);
+    obj.min = parseInt(min);
+
+    return obj;
 }
 
 /**
@@ -49,5 +91,21 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    var arr = [...new Set(array)];
+    var counter;
+    var obj = {};
+    for(let i =0; i<arr.length; i++){
+        counter = 0;
+        for(let j =0; j<array.length;j++){
+            if(arr[i] == array[j]){
+                counter ++;
+            }
+        }
+        let key = arr[i];
+        obj[key]= counter;
+    }
+
+    return obj;
+
 
 }
